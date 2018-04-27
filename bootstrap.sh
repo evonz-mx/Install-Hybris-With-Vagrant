@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-HYBRISDIR="/opt/hybris63" 
+HYBRISDIR="/opt/hybris65" 
 MYSQLDIR="/opt/mysql57"
 HYBRISDB="hybrisDB"
 HYBRISDBUSERNAME=root
@@ -60,15 +60,15 @@ echo "Copying the Hybris installatiion from from host to guest machine.."
 echo "Creating Hybris home directory..."
 mkdir $HYBRISDIR
 cd $HYBRISDIR
-cp /vagrant/hybris-commerce-suite-6.3.0.1.zip $HYBRISDIR/
+cp /vagrant/hybris-commerce-suite-6.5.zip $HYBRISDIR/
 echo "Installing Unzip..."
 yum -y install unzip
 
 echo "Unzipping the Hybris Installation.."
-unzip hybris-commerce-suite-6.3.0.1.zip
+unzip hybris-commerce-suite-6.5.zip
 
 echo "Removing the Hybris Installation zip file.."
-rm hybris-commerce-suite-6.3.0.1.zip
+rm hybris-commerce-suite-6.5.zip
 echo "Changing into the bin/platform directory.."
 cd $HYBRISDIR/hybris/bin/platform
 
