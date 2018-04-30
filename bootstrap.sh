@@ -36,7 +36,7 @@ export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
 echo "Installing MySQL.."
 mkdir $MYSQLDIR
 cd MYSQLDIR
-wget --progress=dot.giga https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+wget --progress=dot:giga https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 yum -y localinstall mysql57-community-release-el7-11.noarch.rpm
 echo "Verifying MySQL Installation..."
 yum repolist enabled | grep "mysql.*-community.*"
