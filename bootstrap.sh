@@ -115,6 +115,3 @@ echo "solrserver.instances.default.autostart=false" >> ../hybris/config/local.pr
 cd $HYBRISDIR/hybris/bin/platform
 echo "Performing Ant All.."
 ant all -Dinput.template=develop
-echo "Starting the Hybris Server.."
-./hybrisserver.sh
-
