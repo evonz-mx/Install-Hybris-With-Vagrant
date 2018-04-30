@@ -102,7 +102,7 @@ wget --progress=dot:mega https://github.com/HybrisArchitect/MySQL-Connector-Java
 cd $HYBRISDIR/hybris/bin/platform
 . ./setantenv.sh
 echo "Performing Ant Clean All.."
-ant clean all #-Dinput.template=develop
+ant clean all -Dinput.template=develop
 echo "Installing b2b accelerator..."
 cd $HYBRISDIR/installer
 ./install.sh -r b2b_acc
@@ -114,7 +114,7 @@ echo "solrserver.instances.default.autostart=false" >> ../hybris/config/local.pr
 
 cd $HYBRISDIR/hybris/bin/platform
 echo "Performing Ant All.."
-ant all #-Dinput.template=develop
+ant all -Dinput.template=develop
 echo "Starting the Hybris Server.."
 ./hybrisserver.sh
 
