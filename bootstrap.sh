@@ -74,24 +74,24 @@ cd $HYBRISDIR/hybris/bin/platform
 
 
 echo "Update the project.properties file to disable the default hsqldb database.."
-sed -i '247s/db.url=jdbc:hsqldb:file/#db.url=jdbc:hsqldb:file/' project.properties
-sed -i '248s/db.driver=org.hsqldb.jdbcDriver/#db.driver=org.hsqldb.jdbcDriver/' project.properties
-sed -i '249s/db.username=sa/#db.username=sa/' project.properties
-sed -i '250s/db.password=/#db.password=/' project.properties
-sed -i '251s/db.tableprefix=/#db.tableprefix=/' project.properties
-sed -i '252s/hsqldb.usecachedtables=true/#hsqldb.usecachedtables=true/' project.properties
+sed -i 's/^db.url=jdbc:hsqldb:file/#db.url=jdbc:hsqldb:file/' project.properties
+sed -i 's/^db.driver=org.hsqldb.jdbcDriver/#db.driver=org.hsqldb.jdbcDriver/' project.properties
+sed -i 's/^db.username=sa/#db.username=sa/' project.properties
+sed -i 's/^db.password=/#db.password=/' project.properties
+sed -i 's/^db.tableprefix=/#db.tableprefix=/' project.properties
+sed -i 's/^hsqldb.usecachedtables=true/#hsqldb.usecachedtables=true/' project.properties
 
 echo "Update the project.properties file to use MySQL and specific database credentials.."
-sed -i '280s/#db/db/' project.properties
-sed -i "280s/<dbname>/$HYBRISDB/" project.properties
-sed -i '281s/#db/db/' project.properties
-sed -i '282s/#db/db/' project.properties 
-sed -i "282s/<username>/$HYBRISDBUSERNAME/" project.properties 
-sed -i '283s/#db/db/' project.properties
-sed -i "283s/<password>/$HYBRISDBPASSWORD/" project.properties 
-sed -i '284s/#db/db/' project.properties
-sed -i '285s/#mysql/mysql/' project.properties
-sed -i '286s/#mysql/mysql/' project.properties
+sed -i '263s/#db/db/' project.properties
+sed -i "263s/<dbname>/$HYBRISDB/" project.properties
+sed -i '264s/#db/db/' project.properties
+sed -i '265s/#db/db/' project.properties 
+sed -i "265s/<username>/$HYBRISDBUSERNAME/" project.properties 
+sed -i '266s/#db/db/' project.properties
+sed -i "266s/<password>/$HYBRISDBPASSWORD/" project.properties 
+sed -i '267s/#db/db/' project.properties
+sed -i '268s/#mysql/mysql/' project.properties
+sed -i '269s/#mysql/mysql/' project.properties
 
 echo "Downloading and installing the MySQL Driver.."
 cd $HYBRISDIR/hybris/bin/platform/lib/dbdriver
