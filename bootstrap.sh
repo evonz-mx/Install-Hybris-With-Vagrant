@@ -36,7 +36,7 @@ export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
 echo "Installing MySQL.."
 mkdir $MYSQLDIR
 cd MYSQLDIR
-wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+wget --progress=dot.giga https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 yum -y localinstall mysql57-community-release-el7-11.noarch.rpm
 echo "Verifying MySQL Installation..."
 yum repolist enabled | grep "mysql.*-community.*"
@@ -95,7 +95,7 @@ sed -i '286s/#mysql/mysql/' project.properties
 
 echo "Downloading and installing the MySQL Driver.."
 cd $HYBRISDIR/hybris/bin/platform/lib/dbdriver
-wget https://github.com/HybrisArchitect/MySQL-Connector-Java-Download/raw/master/mysql-connector-java-5.1.23-bin.jar
+wget --progress=dot:mega https://github.com/HybrisArchitect/MySQL-Connector-Java-Download/raw/master/mysql-connector-java-5.1.23-bin.jar
 
 cd $HYBRISDIR/hybris/bin/platform
 . ./setantenv.sh
