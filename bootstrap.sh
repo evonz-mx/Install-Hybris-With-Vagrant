@@ -74,12 +74,12 @@ cd $HYBRISDIR/hybris/bin/platform
 
 
 echo "Update the project.properties file to disable the default hsqldb database.."
-sed -i 's/^db.url=jdbc:hsqldb:file/#db.url=jdbc:hsqldb:file/' project.properties
-sed -i 's/^db.driver=org.hsqldb.jdbcDriver/#db.driver=org.hsqldb.jdbcDriver/' project.properties
-sed -i 's/^db.username=sa/#db.username=sa/' project.properties
-sed -i 's/^db.password=/#db.password=/' project.properties
-sed -i 's/^db.tableprefix=/#db.tableprefix=/' project.properties
-sed -i 's/^hsqldb.usecachedtables=true/#hsqldb.usecachedtables=true/' project.properties
+sed -i '230s/db.url=jdbc:hsqldb:file/#db.url=jdbc:hsqldb:file/' project.properties
+sed -i '231s/db.driver=org.hsqldb.jdbcDriver/#db.driver=org.hsqldb.jdbcDriver/' project.properties
+sed -i '232s/db.username=sa/#db.username=sa/' project.properties
+sed -i '233s/db.password=/#db.password=/' project.properties
+sed -i '234s/db.tableprefix=/#db.tableprefix=/' project.properties
+sed -i '235s/hsqldb.usecachedtables=true/#hsqldb.usecachedtables=true/' project.properties
 
 echo "Update the project.properties file to use MySQL and specific database credentials.."
 sed -i '263s/#db/db/' project.properties
