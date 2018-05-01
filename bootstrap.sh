@@ -106,4 +106,5 @@ echo "Initializing b2c_b2b accelerator..."
 # suppress autostart solr, or intialize fails
 echo "solrserver.instances.default.autostart=false" >> ../hybris/config/local.properties  
 ./install.sh -r b2c_b2b_acc initialize
-sed -i 's/solrserver.instances.default.autostart=false//' ../hybris/config/local.properties
+# Enabling solr again leads to crash on startup. Leave it off for now.
+#sed -i 's/solrserver.instances.default.autostart=false//' ../hybris/config/local.properties
