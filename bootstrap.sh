@@ -98,11 +98,12 @@ cd $HYBRISDIR/hybris/bin/platform/lib/dbdriver
 wget --progress=dot:mega https://github.com/HybrisArchitect/MySQL-Connector-Java-Download/raw/master/mysql-connector-java-5.1.23-bin.jar
 
 
-echo "Installing b2b accelerator..."
+echo "Installing b2c_b2b accelerator..."
 cd $HYBRISDIR/installer
-./install.sh -r b2b_acc
+./install.sh -r b2c_b2b_acc
 
-echo "Initializing b2b accelerator..."
+echo "Initializing b2c_b2b accelerator..."
 # suppress autostart solr, or intialize fails
 echo "solrserver.instances.default.autostart=false" >> ../hybris/config/local.properties  
-./install.sh -r b2b_acc initialize
+./install.sh -r b2c_b2b_acc initialize
+sed -i 's/solrserver.instances.default.autostart=false//' ../hybris/confrig/local.properties
