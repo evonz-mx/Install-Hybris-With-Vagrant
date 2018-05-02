@@ -23,8 +23,11 @@
   #The primary shell script that installs SAP Hybris and its dependencies
   config.vm.provision "shell", path: "bootstrap.sh", privileged: true 
 
+  #Install the b2b or b2c recipes that we want to use
+  config.vm.provision "shell", path: "configure.sh", privileged: false
+
   #A script that just starts Hybris
-  config.vm.provision "shell", run: "always", path: "startup.sh", privileged: true
+  config.vm.provision "shell", run: "always", path: "startup.sh", privileged: false
 
   config.vm.post_up_message = "
               

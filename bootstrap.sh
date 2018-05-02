@@ -97,14 +97,7 @@ echo "Downloading and installing the MySQL Driver.."
 cd $HYBRISDIR/hybris/bin/platform/lib/dbdriver
 wget --progress=dot:mega https://github.com/HybrisArchitect/MySQL-Connector-Java-Download/raw/master/mysql-connector-java-5.1.23-bin.jar
 
+echo "Changing ownership of hybris directory..."
+chown -R vagrant:vagrant $HYBRISDIR
 
-echo "Installing b2c_b2b accelerator..."
-cd $HYBRISDIR/installer
-./install.sh -r b2c_b2b_acc
-
-echo "Initializing b2c_b2b accelerator..."
-# suppress autostart solr, or intialize fails
-echo "solrserver.instances.default.autostart=false" >> ../hybris/config/local.properties  
-./install.sh -r b2c_b2b_acc initialize
-# Enabling solr again leads to crash on startup. Leave it off for now.
-#sed -i 's/solrserver.instances.default.autostart=false//' ../hybris/config/local.properties
+echo "Finished bootstrap."
