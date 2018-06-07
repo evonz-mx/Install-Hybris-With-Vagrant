@@ -8,6 +8,7 @@
   config.vm.provider "virtualbox" do |vb|
       vb.name = "hybris-vagrant-vm"
       vb.memory = "4096" 
+      vb.cpus = 3
   end 
 
   ##config.vm.network :private_network, ip: '192.168.9.99'  
