@@ -9,5 +9,9 @@ echo "Checking and recreating bindmount..."
 source bindmount.sh
 
 echo "Starting the Hybris Server.."
-cd $HYBRISDIR/installer
-./install.sh -r b2c_b2b_acc start
+#cd $HYBRISDIR/installer
+#./install.sh -r b2c_b2b_acc start
+
+cd $HYBRISDIR/hybris/bin/platform
+./hybrisserver.sh
+
